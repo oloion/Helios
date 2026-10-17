@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Helios</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="void"></div>
+  <div class="sun"></div>
+  <div class="grain"></div>
+
+  <header class="chrome pywebview-drag-region">
+    <div class="brand">
+      <span class="mark" aria-hidden="true"></span>
+      <div>
+        <div class="word">HELIOS</div>
+        <div class="tag">Windows 11 readiness lab</div>
+      </div>
+    </div>
+    <div class="chrome-actions">
+      <button class="winbtn" id="minBtn" title="Свернуть" type="button">–</button>
+      <button class="winbtn close" id="closeBtn" title="Закрыть" type="button">×</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="orb">
+        <svg viewBox="0 0 140 140" class="ring">
+          <defs>
+            <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#ffe7b3" />
+              <stop offset="50%" stop-color="#e8a23a" />
+              <stop offset="100%" stop-color="#ff6b3d" />
+            </linearGradient>
+          </defs>
+          <circle class="track" cx="70" cy="70" r="58" />
+          <circle class="bar" cx="70" cy="70" r="58" />
+        </svg>
+        <div class="orb-core">
+          <div class="score" id="score">—</div>
+          <div class="score-sub" id="scoreLabel">ожидание</div>
+        </div>
+      </div>
+
+      <div class="identity">
+        <h1 id="headline">Зажги систему</h1>
+        <p class="lede" id="lede">Настоящие проверки TPM, Secure Boot, UEFI, CPU и графики. Не костюм поверх трёх print().</p>
+        <dl class="facts">
+          <div><dt>Хост</dt><dd id="fHost">—</dd></div>
+          <div><dt>ОС</dt><dd id="fOs">—</dd></div>
+          <div><dt>CPU</dt><dd id="fCpu">—</dd></div>
+          <div><dt>Скан</dt><dd id="fTime">ещё не было</dd></div>
+        </dl>
+        <div class="actions">
+          <button class="btn primary" id="scanBtn" type="button">Сканировать</button>
+          <button class="btn" id="exportBtn" type="button">Экспорт</button>
+          <button class="btn" id="copyBtn" type="button">Копировать отчёт</button>
+        </div>
+        <p class="toast" id="toast" hidden></p>
+      </div>
+    </section>
+
+    <section class="board">
+      <aside class="live">
+        <h2>Живая система</h2>
+        <div class="meter"><span>CPU</span><b id="mCpu">0%</b><i><em id="bCpu"></em></i></div>
+        <div class="meter"><span>RAM</span><b id="mRam">0%</b><i><em id="bRam"></em></i></div>
+        <div class="meter"><span>Диск C:</span><b id="mDisk">0%</b><i><em id="bDisk"></em></i></div>
+        <p class="live-note" id="liveNote">телеметрия каждую секунду</p>
+      </aside>
+
+      <div class="panel">
+        <div class="chips" id="chips">
+          <button class="chip on" data-cat="all" type="button">Все</button>
+          <button class="chip" data-cat="firmware" type="button">Прошивка</button>
+          <button class="chip" data-cat="hardware" type="button">Железо</button>
+          <button class="chip" data-cat="graphics" type="button">Графика</button>
+          <button class="chip" data-cat="security" type="button">Безопасность</button>
+          <button class="chip" data-cat="identity" type="button">Система</button>
+        </div>
+        <div class="grid" id="grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span id="status">Helios готов. Пробел — новый скан.</span>
+    <span class="ver">v1.0.0</span>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
